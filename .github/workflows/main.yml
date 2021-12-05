@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ main ]
 
@@ -19,7 +15,7 @@ jobs:
     - name: Clone role zabbix server
       uses: actions/checkout@v2
       with:
-        repository: 'iagoferreirati/role-zabbix-server'
+        repository: 'iagoferreirati/ansible-role-zabbix-server'
         path: ./ansible/roles/role-zabbix-server 
 
     - name: Clone role mysql
@@ -31,7 +27,7 @@ jobs:
     - name: Clone role zabbix agent
       uses: actions/checkout@v2
       with:
-        repository: 'iagoferreirati/role-zabbix-agent'
+        repository: 'iagoferreirati/ansible-role-zabbix-agent'
         path: ./ansible/roles/role-zabbix-agent  
 
     - name: Build AMI
